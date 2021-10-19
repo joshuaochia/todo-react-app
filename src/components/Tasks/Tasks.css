@@ -1,0 +1,22 @@
+.header{
+    margin-top: 25px;
+    padding: 15px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.add-task{
+    background-color: rgb(106, 241, 93);
+    border: transparent;
+    border-radius: 10px;
+   
+    height: 40px;
+    color: white;
+}
+
+.logo{
+    height: auto;
+    width: 150px;
+}
+

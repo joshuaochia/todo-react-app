@@ -1,0 +1,18 @@
+.task-item {
+    color: gray;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    margin: 20px;
+    background-color: wheat;
+  }
+
+.task_item__body{
+    text-align: left;
+}
+
+.task-item__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }

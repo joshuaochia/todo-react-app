@@ -16,3 +16,12 @@
     justify-content: space-between;
     align-items: center;
   }
+
+.delete-item{
+  background-color: red;
+  border: 2px solid white;
+  border-radius: 15px;
+  color: white;
+  width: 60px;
+  height: 30px;
+}

@@ -18,7 +18,7 @@ const Tasks = (props) => {
   /////// Deleting specific Task
   const deleteTaskItem = (id) => {
     setTasks((prevState) => {
-      return [...prevState.filter((item) => item.id !== id)];
+      return [...prevState.filter((item) => +item.id !== id)];
     });
   };
 

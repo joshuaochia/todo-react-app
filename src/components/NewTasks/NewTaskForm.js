@@ -24,7 +24,7 @@ const NewTaskForm = (props) => {
     e.preventDefault();
 
     const task = {
-      id: Math.floor(Math.random() * 1000) + 1,
+      id: Math.floor(Math.random() * 1000) + 7,
       title: enteredTitle,
       when: {
         date: new Date(enteredDate),

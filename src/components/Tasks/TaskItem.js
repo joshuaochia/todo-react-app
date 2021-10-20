@@ -9,7 +9,7 @@ const TaskItem = (props) => {
   const deleteHandler = (e) => {
     const taskItem = e.target.closest(".task-item").dataset.id;
 
-    props.deleteTask(taskItem);
+    props.deleteTask(+taskItem);
   };
 
   return (

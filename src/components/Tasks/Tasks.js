@@ -1,9 +1,20 @@
 import "./Tasks.css";
 import Card from "../UI/Card";
 import TaskItem from "./TaskItem";
+import NewTask from "../NewTasks/NewTask";
+import { useState } from "react";
 
 const Tasks = (props) => {
-  const allTasks = props.tasks.map((task) => <TaskItem item={task} />);
+  const [tasksEntered, setTasks] = useState(props.tasks);
+  const NewTaskHandler = (task) => {
+    setTasks((prevState) => {
+      return [task, ...prevState];
+    });
+  };
+  const allTasks = tasksEntered.map((task) => (
+    <TaskItem key={task.id} item={task} />
+  ));
+
   return (
     <Card>
       <div className="header">
@@ -13,6 +24,7 @@ const Tasks = (props) => {
         />
         <button className="add-task">New Task &#65291;</button>
       </div>
+      <NewTask NewTask={NewTaskHandler} />
       <div className="tasks">{allTasks}</div>
     </Card>
   );

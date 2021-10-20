@@ -5,7 +5,6 @@ const TaskItem = (props) => {
   const day = props.item.when.date.toLocaleString("en-US", { day: "2-digit" });
   const year = props.item.when.date.getFullYear();
   const time = props.item.when.time;
-  const meridiem = props.item.when.meridiem;
 
   return (
     <div>
@@ -13,7 +12,7 @@ const TaskItem = (props) => {
         <div className="task-item__header">
           <h4>{props.item.title}</h4>
           <p>
-            {month} {day}, {year} : {time} {meridiem}
+            {month} {day}, {year} | {time}
           </p>
         </div>
         <div className="task_item__body">

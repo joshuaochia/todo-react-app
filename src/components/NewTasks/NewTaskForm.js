@@ -39,6 +39,11 @@ const NewTaskForm = (props) => {
     }
 
     props.onSubmitFormHandler(task);
+
+    setDescrip("");
+    setDate("");
+    setTime("");
+    setTitle("");
   };
   return (
     <form onSubmit={formHandler}>

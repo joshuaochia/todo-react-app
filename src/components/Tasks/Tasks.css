@@ -10,7 +10,7 @@
     background-color: rgb(106, 241, 93);
     border: transparent;
     border-radius: 10px;
-   
+    cursor: pointer;
     height: 40px;
     color: white;
 }

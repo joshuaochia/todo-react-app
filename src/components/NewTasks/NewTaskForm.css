@@ -54,3 +54,7 @@
     height: 40px;
     color: white;
   }
+
+  .new-form__actions button {
+    cursor: pointer;
+  }

@@ -33,6 +33,11 @@ const NewTaskForm = (props) => {
       description: enteredDescrip,
     };
 
+    if (task.description.length < 5) {
+      alert("Minimum of 5 Character");
+      return;
+    }
+
     props.onSubmitFormHandler(task);
   };
   return (
@@ -44,15 +49,26 @@ const NewTaskForm = (props) => {
             value={enteredTitle}
             onChange={TitleHandler}
             type="text"
+            required
           ></input>
         </div>
         <div className="new-form__control">
           <label>Date</label>
-          <input value={enteredDate} onChange={DateHandler} type="date"></input>
+          <input
+            value={enteredDate}
+            onChange={DateHandler}
+            type="date"
+            required
+          ></input>
         </div>
         <div className="new-form__control">
           <label>Time</label>
-          <input value={enteredTime} onChange={TimeHandler} type="time"></input>
+          <input
+            value={enteredTime}
+            onChange={TimeHandler}
+            type="time"
+            required
+          ></input>
         </div>
 
         <div className="new-form__control">
@@ -62,11 +78,12 @@ const NewTaskForm = (props) => {
             onChange={DescriptionHandler}
             rows="2"
             cols="50"
+            required
           ></textarea>
         </div>
       </div>
       <div className="new-form__actions">
-        <button value="add" className="cancel">
+        <button onClick={props.cancelNewTask} value="add" className="cancel">
           Cancel
         </button>
         <button className="add" type="submit" value="add">

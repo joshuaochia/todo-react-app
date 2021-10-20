@@ -15,6 +15,14 @@ const Tasks = (props) => {
     <TaskItem key={task.id} item={task} />
   ));
 
+  const [isAdding, setIsAdding] = useState(false);
+
+  const addTaskHandler = () => {
+    setIsAdding(true);
+  };
+
+  const cancelNewTaskBTN = () => setIsAdding(false);
+
   return (
     <Card>
       <div className="header">
@@ -22,9 +30,16 @@ const Tasks = (props) => {
           src="https://lh6.ggpht.com/aiY9J8YK8Lzr7hMC7nZWlZGiBn8TF_PY7NVNy5U1i5g4zG8yEPzEZTJK2WwbWJUogg"
           className="logo"
         />
-        <button className="add-task">New Task &#65291;</button>
+        {!isAdding && (
+          <button onClick={addTaskHandler} className="add-task">
+            New Task &#65291;
+          </button>
+        )}
       </div>
-      <NewTask NewTask={NewTaskHandler} />
+
+      {isAdding && (
+        <NewTask cancelNewTask={cancelNewTaskBTN} NewTask={NewTaskHandler} />
+      )}
       <div className="tasks">{allTasks}</div>
     </Card>
   );

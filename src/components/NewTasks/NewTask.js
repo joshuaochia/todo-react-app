@@ -5,7 +5,12 @@ const NewTask = (props) => {
   const onSubmitFormHandler = (task) => {
     props.NewTask(task);
   };
-  return <NewTaskForm onSubmitFormHandler={onSubmitFormHandler}></NewTaskForm>;
+  return (
+    <NewTaskForm
+      cancelNewTask={props.cancelNewTask}
+      onSubmitFormHandler={onSubmitFormHandler}
+    ></NewTaskForm>
+  );
 };
 
 export default NewTask;
